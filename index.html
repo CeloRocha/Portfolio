@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html long="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio FrontWeek</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="menu">
+        <div class="menu-left">
+            <a href="" class="link menu-1">Home</a>
+            <!-- <a href="" class="link menu-2">About</a> -->
+        </div>
+        <div class="menu-logo">
+            <h5 class="menu-3">Marcelo</h5>
+        </div>
+        <div class="menu-right">
+            <a href='#works' class="link menu-4">Works</a>
+            <!-- <a href="" class="link menu-5">Get in touch</a> -->
+        </div>
+    </header>
+
+
+    <section class="container hero">
+        <div class="container-item">
+
+            <div>
+                <h1>Marcelo Rocha</h1>
+            </div>
+            <div>
+                <h2 class="mask text-right pr-5 mt-6">Student</h2>
+            </div>
+            <div>
+                <h2 class="mask text-left px-4">Development Engineer</h2>
+            </div>
+
+            <div class="flex-end pr-8 button">
+                <a href="https://github.com/CeloRocha?tab=repositories" target="_blank" class="square text-center">
+                    <img src='./img/githubIcon.png' alt='GitHub'/>
+                </a>
+            </div>
+
+        </div>
+        <div class="container-item">
+            <img src="img/01.png" alt="">
+        </div>
+    </section>
+
+    <!-- SELECTED WORKS-->
+    <section class="list" id="section-01">
+        <div class="list-item">
+            <a id='works'>
+                <h2>Selected Work</h2>
+            </a>
+        </div>
+        <div class="list-item py-5">
+            <h5 class="color-gray mr-2">01.</h5>
+            <a href="https://let-me-ask-13098.web.app/" target="_blank">
+                <h3>Let Me Ask</h3>
+            </a>
+            <img src="img/projects/Letmeask.png" class="img-project" alt="">
+        </div>
+        <div class="list-item py-5">
+            <h5 class="color-gray mr-2">02.</h5>
+            <a href="https://celorocha.github.io/weather-app/" target="_blank">
+                <h3>Weather App</h3>
+            </a>
+            <img src="img/projects/WeatherApp.png" class="img-project" alt="">
+        </div>
+        <div class="list-item py-5">
+            <h5 class="color-gray mr-2">03.</h5>
+            <a href="https://celorocha.github.io/react-quiz-app/" target="_blank">
+                <h3>React Quiz App</h3>
+            </a>
+            <img src="img/projects/QuizApp.png" class="img-project" alt="">
+        </div>
+        <div class="list-item py-5">
+            <h5 class="color-gray mr-2">04.</h5>
+            <a>
+                <h3>Interface BlackBee</h3>
+            </a>
+            <img src="img/Interface.PNG" class="img-project" alt="">
+        </div>
+
+        <div class="bb-gray"></div>
+
+        <div class="list-item py-5">
+            <h5 class="color-gray mr-2">05.</h5>
+            <a>
+                <h3>Projeto de Software</h3>
+            </a>
+            <img src="img/DiagramaMutano.png" class="img-project" alt="">
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            var tl = gsap.timeline();
+            tl
+                .from(".menu-1", {
+                    duration: 1,
+                    y: 50,
+                    opacity: 0,
+                    delay: 0.5
+                })
+                .from(".menu-3", {
+                    duration: 1,
+                    y: 50,
+                    opacity: 0
+                }, "-=0.8")
+                .from(".menu-5", {
+                    duration: 1,
+                    y: 50,
+                    opacity: 0
+                }, "-=0.8")
+                // .from(".menu-4", {
+                //     duration: 1,
+                //     y: 50,
+                //     opacity: 0
+                // }, "-=0.8")
+                // .from(".menu-5", {
+                //     duration: 1,
+                //     y: 50,
+                //     opacity: 0
+                // }, "-=0.8")
+                .from(".container-item div", {
+                    duration: 2,
+                    y: 300,
+                    opacity: 0,
+                    stagger: {
+                        each: 0.5
+                    },
+                }, "-0.5")
+                .from(".container-item img", {
+                    duration: 4,
+                    y: 450,
+                    opacity: 0
+                }, "-0.5")
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.from("#section-01 div", {
+                duration: 0.5,
+                y: 300,
+                opacity: 0,
+                stagger: {
+                    each: 0.2
+                },
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#section-01"
+                }
+            })
+
+        })
+    </script>
+</body>
+
+</html>

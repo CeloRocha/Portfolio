@@ -1,0 +1,101 @@
+        .menu {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 16px;
+            position: fixed;
+            z-index: 2;
+            background-color: #050607;
+        }
+        
+        .container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        
+        .hero {
+            height: 100vh;
+        }
+
+        .button{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            a > img{
+                transform: translateX(10px);
+            }
+        }
+
+        
+        @media screen and (max-width: 960px) {
+            .hero {
+                height: auto;
+            }
+            .container {
+                flex-direction: column;
+            }
+        }
+        
+        .container-item:nth-child(1) {
+            flex-grow: 2;
+        }
+        
+        .container-item:nth-child(2) {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: 300px;
+            }
+        }
+        
+        .flex-end {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .bb-gray {
+            width: 100%;
+            z-index: -2;
+            border-bottom: 1px solid $black-light
+        }
+        
+        .list-item {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            transition: 1s ease;
+            a {
+                &:hover {
+                    &+.img-project {
+                        transform: translate(-50%, -50%) translate3d(0px, 0, 0)skew(0deg);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        
+        .img-project {
+            max-width: 720px;
+            border-radius: 4px;
+            position: absolute;
+            top: 50%;
+            left: 65%;
+            z-index: -1;
+            transition: 1s ease-out;
+            transform: translate(-50%, -50%) translate3d(-1000px, 0, 0) skewX(30deg);
+            opacity: 0;
+        }
